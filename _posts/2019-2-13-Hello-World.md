@@ -1,1 +1,5 @@
-dnxh my blog
+This is my first post here !
+
+```md
+categories: JavaScript
+```

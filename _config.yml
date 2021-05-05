@@ -6,10 +6,10 @@
 name: Blog of dnxh
 
 # Name of the author
-author: Amit Merchant
+author: dnxh
 
 # Short bio or description (displayed in the header)
-description: An elegant Jekyll theme
+description: InfoSec enthusiast, passionate about malware analysis, low level stuff and breaking code. 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/duckknife.jpg
@@ -24,7 +24,7 @@ footer-links:
   email: 
   facebook:
   flickr:
-  github: https://github.com/0xdnxh
+  github: 0xdnxh
   instagram:
   linkedin: 
   pinterest:
