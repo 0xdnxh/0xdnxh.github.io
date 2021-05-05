@@ -50,7 +50,7 @@ google_analytics: UA-43339302-11
 # Used for Sitemap.xml and your RSS feed
 url: 
 enforce_ssl: 
-=======
+
 url: https://0xdnxh.github.io
 enforce_ssl: 
 
