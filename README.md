@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <img src="/images/duckkinfe.jpg" alt="dnxh" width="200"/>
+  <img src="/images/duckknife.jpg" alt="dnxh" width="200"/>
   <br>  
   <p align="center">
     <i>Support the creator via <a href="https://paypal.me/AmitMerchant">Paypal</a></i>
