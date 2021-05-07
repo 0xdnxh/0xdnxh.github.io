@@ -3,9 +3,9 @@ layout: post
 title: Just another post
 categories: Python
 ---
-### Test post
+## Test post
 
-## Test heading
+### Test heading
 
 This is a test post
 
