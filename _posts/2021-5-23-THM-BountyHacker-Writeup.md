@@ -28,15 +28,15 @@ Let's try to log in FTP using anonymous:anonymous as credentials and look around
 
 We can see that there are two files **locks.txt** and **task.txt**, let's go ahead and download them :
 
-<img src="/images/THM/BountyHacker/tasklocks_download.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/tasklocks_download.PNG" width="400" height="220"/>
 
-Task.txt looks like it was written by a person named **lin** who might be a user on the system :
+Task.txt looks like it was written by a person named **lin** who might be a user on the system:
 
-<img src="/images/THM/BountyHacker/tasktxt.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/tasktxt.PNG" width="200" height="150"/>
 
 However, Locks.txt looks like it's a list of passwords :
 
-<img src="/images/THM/BountyHacker/lockstxt.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/lockstxt.PNG" width="300" height="600"/>
 
 So maybe we could use these passwords to bruteforce SSH using the username **lin** .
 
@@ -53,7 +53,7 @@ You can find more on using Hydra to bruteforce the SSH login [here](https://linu
 
 Running the command gives us the following output :
 
-<img src="/images/THM/BountyHacker/hydraoutput.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/hydraoutput.PNG" width="400" height="400"/>
 
 Great, so now we have valid credentials to connect to SSH ! Using them enables us to log into the system and list system files and we can find the **user.txt** file :
 
@@ -61,9 +61,9 @@ Great, so now we have valid credentials to connect to SSH ! Using them enables u
 
 ## Privilege escalation
 
-<img src="/images/THM/BountyHacker/sudoloutput.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/sudoloutput.PNG" width="300" height="150"/>
 
-<img src="/images/THM/BountyHacker/root.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/root.PNG" width="300" height="150"/>
 
-<img src="/images/THM/BountyHacker/rootflag.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/rootflag.PNG" width="300" height="200"/>
 
