@@ -3,6 +3,9 @@ layout: post
 title: My first post
 categories: [Javascript,Python]
 ---
+## Test post
+
+### Test heading
 
 This is my first post here!
 
