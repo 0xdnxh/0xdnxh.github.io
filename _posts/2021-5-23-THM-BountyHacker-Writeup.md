@@ -36,7 +36,7 @@ Task.txt looks like it was written by a person named **lin** who might be a user
 
 However, Locks.txt looks like it's a list of passwords :
 
-<img src="/images/THM/BountyHacker/lockstxt.PNG" width="200" height="100"/>
+<img src="/images/THM/BountyHacker/lockstxt.PNG" width="200" height="300"/>
 
 So maybe we could use these passwords to bruteforce SSH using the username **lin** .
 
