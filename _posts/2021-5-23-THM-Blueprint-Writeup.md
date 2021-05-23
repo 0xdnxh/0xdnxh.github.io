@@ -76,11 +76,10 @@ Great ! So now we have a Meterpreter sessions we can interact with. The question
 
 The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To decrypt it, I use Hashcat which is a password cracking tool. The command I use is ```hashcat -m 1000 myhash SecLists/Passwords/Common-Credentials/common-passwords-win.txt``` where:
 <ul>
-  <li>-m 1000 : specifies the type of hash to crack, 1000 is for NTLM. You can find the complete list for hash types [here](https://hashcat.net/wiki/doku.php?id=example_hashes)</li>
-  <li>myhash : the file where I stored the necessary part of the NTLM hash for user Lab, which is the last part. It looks like this :
+  <li>-m 1000 : specifies the type of hash to crack, 1000 is for NTLM. You can find the complete list for hash types [here](https://hashcat.net/wiki/doku.php?id=example_hashes).</li>
+  <li>myhash : the file where I stored the necessary part of the NTLM hash for user Lab, which is the last part.
   </li>
-  <img src="/images/THM/Blueprint/cat_myhash.PNG" width="300" height="70"/>
-  <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt)</li>
+  <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt).</li>
 </ul>
 
 Unfortunately, this doesn't work. I decide instead to go for something easier : [CrackStation](https://crackstation.net/), where you will just provide the hash and the website cracks it for you. Convenient, no ? It uses a dictionary that can be found [here](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm).
