@@ -52,6 +52,22 @@ It looks like we could modify some PHP code in the **http://ipaddress/oscommerce
 
 <img src="/images/THM/Blueprint/exploit_modified.PNG" width="700" height="500"/>
 
-I set up a netcat listener on port 1234, accordingly to my modified script and run the exploit. 
+Let's fire up Metasploit and use **/multi/handler** to set up a listener on port 1234, accordingly to my modified script.
+
+<img src="/images/THM/Blueprint/multihandler.PNG" width="600" height="100"/>
+
+Let's run the exploit :
 
 <img src="/images/THM/Blueprint/launching_script.PNG" width="600" height="100"/>
+
+We load **configure.php** as indicated in the output and TADAAA we receive a shell on our listener :)
+
+<img src="/images/THM/Blueprint/metasploit_shell.PNG" width="600" height="150"/>
+
+A shell is good but a Meterpreter session is better as it will allow us to run tools. We use the command ```sessions -u 7``` where 7 is our session ID :
+
+<img src="/images/THM/Blueprint/upgrade.PNG" width="600" height="150"/>
+
+Great ! So now we have a Meterpreter sessions we can interact with. Ûsing hashdump we are able to retrieve hashes on the system :
+
+<img src="/images/THM/Blueprint/hashdump.PNG" width="600" height="150"/>
