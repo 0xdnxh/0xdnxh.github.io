@@ -53,11 +53,11 @@ You can find more on using Hydra to bruteforce the SSH login [here](https://linu
 
 Running the command gives us the following output :
 
-<img src="/images/THM/BountyHacker/hydraoutput.PNG" width="800" height="250"/>
+<img src="/images/THM/BountyHacker/hydraoutput.PNG" width="800" height="230"/>
 
 Great, so now we have valid credentials to connect to SSH ! Using them enables us to log into the system and list system files and we can find the **user.txt** file :
 
-<img src="/images/THM/BountyHacker/sshconnect.PNG" width="450" height="300"/>
+<img src="/images/THM/BountyHacker/sshconnect.PNG" width="500" height="350"/>
 
 ## Privilege escalation
 
