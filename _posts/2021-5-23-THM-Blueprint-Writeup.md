@@ -4,7 +4,7 @@ title: THM Blueprint writeup
 categories: THM
 ---
 ## Introduction
-<img src="/images/THM/Blueprint/banner.PNG" width="200" height="200"/>
+<img src="/images/THM/Blueprint/banner.PNG" width="700" height="200"/>
 
 In this blog post you will find a writeup for the [Blueprint](https://tryhackme.com/room/blueprint) room on TryHackMe. It's a Windows machine running a vulnerable version of osCommerce, an online store solution. Since this room isn't guided like the other ones, you will find my own steps.
 
@@ -54,7 +54,7 @@ It looks like we could modify some PHP code in the **http://ipaddress/oscommerce
 
 Let's fire up Metasploit and use **/multi/handler** to set up a listener on port 1234, accordingly to my modified script.
 
-<img src="/images/THM/Blueprint/multihandler.PNG" width="600" height="100"/>
+<img src="/images/THM/Blueprint/multihandler.PNG" width="600" height="200"/>
 
 Let's run the exploit :
 
@@ -62,11 +62,11 @@ Let's run the exploit :
 
 We load **configure.php** as indicated in the output and TADAAA we receive a shell on our listener :)
 
-<img src="/images/THM/Blueprint/metasploit_shell.PNG" width="600" height="150"/>
+<img src="/images/THM/Blueprint/metasploit_shell.PNG" width="600" height="100"/>
 
 A shell is good but a Meterpreter session is better as it will allow us to run tools. We use the command ```sessions -u 7``` where 7 is our session ID :
 
-<img src="/images/THM/Blueprint/upgrade.PNG" width="600" height="150"/>
+<img src="/images/THM/Blueprint/upgrade.PNG" width="600" height="200"/>
 
 Great ! So now we have a Meterpreter sessions we can interact with. Ûsing hashdump we are able to retrieve hashes on the system :
 
