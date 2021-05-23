@@ -34,14 +34,23 @@ Interesting! So now we know there's an **osCommerce version 2.3.4** application 
 ### Fuzzing
 Let's try to find which directories exist using dirb
 
-<img src="/images/THM/Blueprint/dirboutput.PNG" width="500" height="150"/>
+<img src="/images/THM/Blueprint/dirboutput.PNG" width="500" height="200"/>
 
 Nothing really interesting. Let' go back to focusing on finding an exploit related to the version.
 
 ## Exploitation
-Trying to find out if there are any exploit for osCommerce 2.3.4 using searchsploit, we find some results that could potentially be helpful :
+Trying to find out if there are any exploit for osCommerce 2.3.4 using searchsploit, we come across some results that could potentially be helpful :
 
-<img src="/images/THM/Blueprint/searchsploit_oscommerce.PNG" width="500" height="150"/>
+<img src="/images/THM/Blueprint/searchsploit_oscommerce.PNG" width="600" height="200"/>
 
-The last one **php/webapps/44374.py** looks interesting, it's a Remote code execution, we can find the complete code [here](https://www.exploit-db.com/exploits/44374) :
+The last one **php/webapps/44374.py** looks interesting, it's a Remote code execution, we can find the complete code [here](https://www.exploit-db.com/exploits/44374). Let's download it and take a look at it. 
 
+<img src="/images/THM/Blueprint/exploit_original.PNG" width="700" height="300"/>
+
+It looks like we could modify some PHP code in the **http://ipaddress/oscommerce-2.3.4.1/catalog/install/install.php** page and execute it. In the code, the payload tries to execute the **system("ls")** command to list the files on a Linux target. Let's try to replace it with a Windows PHP reverse shell. I used [this one](https://raw.githubusercontent.com/Dhayalanb/windows-php-reverse-shell/master/Reverse%20Shell.php) and modified it accordingly so now it looks like this :
+
+<img src="/images/THM/Blueprint/exploit_modified.PNG" width="700" height="300"/>
+
+I set up a netcat listener on port 1234, accordingly to my modified script and run the exploit. 
+
+<img src="/images/THM/Blueprint/launching_script.PNG" width="600" height="100"/>
