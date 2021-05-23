@@ -25,8 +25,8 @@ Navigating to http://10.10.7.76 , we get a Server error:
 
 However, navigating to https://10.10.7.76 or 10.10.7.76:8080 we get the following page:
 
-<img src="/images/THM/Blueprint/oscommerce_page.PNG" width="500" height="100"/>
+<img src="/images/THM/Blueprint/oscommerce_page.PNG" width="500" height="150"/>
 
 Interesting! Navigating inside the folder, we find two folders: catalog/ and docs/
 
-<img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="500" height="100"/>
+<img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="500" height="150"/>
