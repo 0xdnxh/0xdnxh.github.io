@@ -24,9 +24,9 @@ We also see that the OS is Linux.
 ## FTP anonymous login
 Let's try to log in FTP using anonymous:anonymous as credentials and look around by listing system files :
 
-<img src="/images/THM/BountyHacker/fTploginls.PNG" width="400" height="400"/>
+<img src="/images/THM/BountyHacker/ftploginls.PNG" width="400" height="300"/>
 
 We can see that there are two files **locks.txt** and **task.txt**, let's go ahead and download them :
 
-<img src="/images/THM/BountyHacker/tasklocks_download.PNG" width="400" height="400"/>
+<img src="/images/THM/BountyHacker/tasklocks_download.PNG" width="400" height="300"/>
 
