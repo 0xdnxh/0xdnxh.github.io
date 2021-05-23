@@ -78,7 +78,7 @@ The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To 
 <ul>
   <li>-m 1000 : specifies the type of hash to crack, 1000 is for NTLM. You can find the complete list for hash types [here](https://hashcat.net/wiki/doku.php?id=example_hashes)</li>
   <li>myhash : the file where I stored the necessary part of the NTLM hash for user Lab, which is the last part. It looks like this :
-  <img src="/images/THM/Blueprint/cat_myhash.PNG" width="600" height="100"/>
+  <img src="/images/THM/Blueprint/cat_myhash.PNG" width="300" height="90"/>
   </li>
   <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt)</li>
 </ul>
@@ -90,8 +90,8 @@ Okay, so we got the cracked password that I will not be sharing here for obvious
 
 Now let's go back to our Meterpreter session and find the **root.txt** flag. We can use the command ```dir /s *root*``` in the C:\Users\Administrator folder, it returns the exact location for our file :
 
-<img src="/images/THM/Blueprint/searchflag.PNG" width="600" height="150"/>
+<img src="/images/THM/Blueprint/searchflag.PNG" width="500" height="200"/>
 
 And we got our root.txt :
 
-<img src="/images/THM/Blueprint/flag.PNG" width="600" height="150"/>
+<img src="/images/THM/Blueprint/flag.PNG" width="500" height="100"/>
