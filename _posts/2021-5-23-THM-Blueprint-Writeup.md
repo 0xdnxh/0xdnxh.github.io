@@ -27,6 +27,21 @@ However, navigating to https://10.10.7.76 or 10.10.7.76:8080 we get the followin
 
 <img src="/images/THM/Blueprint/oscommerce_page.PNG" width="500" height="150"/>
 
-Interesting! Navigating inside the folder, we find two folders: catalog/ and docs/
+Interesting! So now we know there's an **osCommerce version 2.3.4** application running. Navigating inside the directory, we find two folders: catalog/ and docs/
 
 <img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="500" height="175"/>
+
+### Fuzzing
+Let's try to find which directories exist using dirb
+
+<img src="/images/THM/Blueprint/dirboutput.PNG" width="500" height="150"/>
+
+Nothing really interesting. Let' go back to focusing on finding an exploit related to the version.
+
+## Exploitation
+Trying to find out if there are any exploit for osCommerce 2.3.4 using searchsploit, we find some results that could potentially be helpful :
+
+<img src="/images/THM/Blueprint/searchsploit_oscommerce.PNG" width="500" height="150"/>
+
+The last one **php/webapps/44374.py** looks interesting, it's a Remote code execution, we can find the complete code [here](https://www.exploit-db.com/exploits/44374) :
+
