@@ -53,7 +53,7 @@ You can find more on using Hydra to bruteforce the SSH login [here](https://linu
 
 Running the command gives us the following output :
 
-<img src="/images/THM/BountyHacker/hydraoutput.PNG" width="800" height="380"/>
+<img src="/images/THM/BountyHacker/hydraoutput.PNG" width="800" height="300"/>
 
 Great, so now we have valid credentials to connect to SSH ! Using them enables us to log into the system and list system files and we can find the **user.txt** file :
 
@@ -63,7 +63,7 @@ Great, so now we have valid credentials to connect to SSH ! Using them enables u
 
 <img src="/images/THM/BountyHacker/sudoloutput.PNG" width="550" height="100"/>
 
-<img src="/images/THM/BountyHacker/root.PNG" width="500" height="100"/>
+<img src="/images/THM/BountyHacker/root.PNG" width="550" height="90"/>
 
-<img src="/images/THM/BountyHacker/rootflag.PNG" width="100" height="90"/>
+<img src="/images/THM/BountyHacker/rootflag.PNG" width="200" height="100"/>
 
