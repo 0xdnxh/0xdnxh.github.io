@@ -4,7 +4,7 @@ title: THM Bounty Hacker writeup
 categories: THM
 ---
 ## Introduction
-<img src="/images/THM/BountyHacker/banner.PNG" width="800" height="ç0"/>
+<img src="/images/THM/BountyHacker/banner.PNG" width="800" height="90"/>
 
 In this blog post you will find a writeup for the [Bounty Hacker](https://tryhackme.com/room/cowboyhacker) room on TryHackMe. It's a vulnerable Linux machine and since this room has a few questions to answer, you will find my answers as well as some additional information I gathered along the way.
 
