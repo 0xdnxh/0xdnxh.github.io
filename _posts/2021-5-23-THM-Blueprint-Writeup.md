@@ -90,8 +90,8 @@ Okay, so we got the cracked password that I will not be sharing here for obvious
 
 Now let's go back to our Meterpreter session and find the **root.txt** flag. We can use the command ```dir /s *root*``` in the C:\Users\Administrator folder, it returns the exact location for our file :
 
-<img src="/images/THM/Blueprint/searchflag.PNG" width="500" height="200"/>
+<img src="/images/THM/Blueprint/searchflag.PNG" width="450" height="250"/>
 
 And we got our root.txt :
 
-<img src="/images/THM/Blueprint/flag.PNG" width="500" height="100"/>
+<img src="/images/THM/Blueprint/flag.PNG" width="500" height="90"/>
