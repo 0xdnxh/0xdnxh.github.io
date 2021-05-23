@@ -29,4 +29,4 @@ However, navigating to https://10.10.7.76 or 10.10.7.76:8080 we get the followin
 
 Interesting! Navigating inside the folder, we find two folders: catalog/ and docs/
 
-<img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="500" height="150"/>
+<img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="500" height="175"/>
