@@ -4,7 +4,7 @@ title: THM Bounty Hacker writeup
 categories: THM
 ---
 ## Introduction
-<img src="/images/THM/BountyHacker/banner.PNG" width="800" height="100"/>
+<img src="/images/THM/BountyHacker/banner.PNG" width="800" height="ç0"/>
 
 In this blog post you will find a writeup for the [Bounty Hacker](https://tryhackme.com/room/cowboyhacker) room on TryHackMe. It's a vulnerable Linux machine and since this room has a few questions to answer, you will find my answers as well as some additional information I gathered along the way.
 
@@ -24,9 +24,9 @@ We also see that the OS is Linux.
 ## FTP anonymous login
 Let's try to log in FTP using anonymous:anonymous as credentials and look around by listing system files :
 
-<img src="/images/THM/BountyHacker/ftploginls.PNG" width="400" height="300"/>
+<img src="/images/THM/BountyHacker/ftploginls.PNG" width="400" height="250"/>
 
 We can see that there are two files **locks.txt** and **task.txt**, let's go ahead and download them :
 
-<img src="/images/THM/BountyHacker/tasklocks_download.PNG" width="400" height="300"/>
+<img src="/images/THM/BountyHacker/tasklocks_download.PNG" width="400" height="250"/>
 
