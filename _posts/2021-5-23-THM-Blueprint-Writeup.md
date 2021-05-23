@@ -21,10 +21,11 @@ From this output we understand that the following interesting ports are open:
 </ul>
 
 Navigating to http://10.10.7.76 , we get a Server error:
-<img src="/images/THM/Blueprint/server_error.PNG" width="400" height="200"/>
+
+<img src="/images/THM/Blueprint/server_error.PNG" width="600" height="100"/>
 
 However, navigating to https://10.10.7.76 or 10.10.7.76:8080 we get the following page:
-<img src="/images/THM/Blueprint/oscommerce_page.PNG" width="600" height="300"/>
+<img src="/images/THM/Blueprint/oscommerce_page.PNG" width="600" height="250"/>
 
 Interesting! Navigating inside the folder, we find two folders: catalog/ and docs/
-<img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="600" height="300"/>
+<img src="/images/THM/Blueprint/indexof_oscommerce.PNG" width="600" height="250"/>
