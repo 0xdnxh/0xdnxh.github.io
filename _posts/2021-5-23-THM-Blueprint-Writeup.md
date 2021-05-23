@@ -35,7 +35,7 @@ Interesting! So now we know there's an **osCommerce version 2.3.4** application 
 ### Fuzzing
 Let's try to find which directories exist using dirb
 
-<img src="/images/THM/Blueprint/dirboutput.PNG" width="500" height="200"/>
+<img src="/images/THM/Blueprint/dirboutput.PNG" width="500" height="250"/>
 
 Nothing really interesting. Let' go back to focusing on finding an exploit related to the version.
 
