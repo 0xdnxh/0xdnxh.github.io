@@ -65,5 +65,5 @@ Great, so now we have valid credentials to connect to SSH ! Using them enables u
 
 <img src="/images/THM/BountyHacker/root.PNG" width="400" height="250"/>
 
-
+<img src="/images/THM/BountyHacker/rootflag.PNG" width="400" height="250"/>
 
