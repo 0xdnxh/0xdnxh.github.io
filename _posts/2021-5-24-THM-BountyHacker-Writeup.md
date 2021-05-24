@@ -25,7 +25,7 @@ We also see that the OS is Linux.
 ## Website
 Looking at http://10.10.37.218 , it doesn't seem like there's anything interesting
 
-<img src="/images/THM/BountyHacker/website.PNG" width="500" height="300"/>
+<img src="/images/THM/BountyHacker/website.PNG" width="500" height="400"/>
 
 ## FTP anonymous login
 Let's try to log in FTP using anonymous:anonymous as credentials and look around by listing system files :
