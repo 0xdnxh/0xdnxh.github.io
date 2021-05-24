@@ -4,8 +4,11 @@ title: About
 permalink: /about/
 ---
 
-InfoSec enthusiast, passionate about malware analysis, low level stuff and breaking code. 
+Hello friend,  
 
-<p align="center">
-<img src="/images/duckknife.jpg" alt="dnxh" width="200"/>
-</p>
+A few words about me ?  
+I am passionate about malware and binary security, and I think that the only failure is never trying.   
+This is a blog where I document my journey in InfoSec, a field I stepped into a couple of years ago.  
+I hope you will enjoy being here as much as I do.
+
+Happy hacking \o/

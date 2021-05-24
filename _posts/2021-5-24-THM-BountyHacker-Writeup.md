@@ -25,7 +25,7 @@ We also see that the OS is Linux.
 ## Website
 Looking at http://10.10.37.218 , it doesn't seem like there's anything interesting
 
-<img src="/images/THM/BountyHacker/website.PNG" width="400" height="250"/>
+<img src="/images/THM/BountyHacker/website.PNG" width="500" height="300"/>
 
 ## FTP anonymous login
 Let's try to log in FTP using anonymous:anonymous as credentials and look around by listing system files :
@@ -42,7 +42,7 @@ Task.txt looks like it was written by a person named **lin** who might be a user
 
 However, Locks.txt looks like it's a list of passwords :
 
-<img src="/images/THM/BountyHacker/lockstxt.PNG" width="200" height="250"/>
+<img src="/images/THM/BountyHacker/lockstxt.PNG" width="200" height="150"/>
 
 So maybe we could use these passwords to bruteforce SSH using the username **lin** .
 
