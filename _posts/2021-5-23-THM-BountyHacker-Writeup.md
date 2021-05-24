@@ -9,6 +9,7 @@ categories: THM
 In this blog post you will find a writeup for the [Bounty Hacker](https://tryhackme.com/room/cowboyhacker) room on TryHackMe. It's a vulnerable Linux machine and since this room has a few questions to answer, you will find my answers as well as some additional information I gathered along the way.
 
 ## Enumeration
+**IP**: 10.10.37.218  
 First of all, let's run nmap to get more information about the machine and discover open ports. The command that I used is ```nmap -sC -sV 10.10.37.218``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. The command outputs the following: 
 
 <img src="/images/THM/BountyHacker/nmap_output.PNG" width="600" height="600"/>
@@ -36,7 +37,7 @@ Task.txt looks like it was written by a person named **lin** who might be a user
 
 However, Locks.txt looks like it's a list of passwords :
 
-<img src="/images/THM/BountyHacker/lockstxt.PNG" width="200" height="300"/>
+<img src="/images/THM/BountyHacker/lockstxt.PNG" width="200" height="250"/>
 
 So maybe we could use these passwords to bruteforce SSH using the username **lin** .
 
@@ -49,7 +50,7 @@ For this part, I'm using Hydra which is a login cracker that supports many proto
   <li>-t : number of threads</li>
   <li>ssh : the protocol we are trying to bruteforce</li>
 </ul>
-You can find more on using Hydra to bruteforce the SSH login [here](https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux)
+You can find more on using Hydra to bruteforce the SSH login [here](https://linuxconfig.org/ssh-password-testing-with-hydra-on-kali-linux) .
 
 Running the command gives us the following output :
 
@@ -60,10 +61,19 @@ Great, so now we have valid credentials to connect to SSH ! Using them enables u
 <img src="/images/THM/BountyHacker/sshconnect.PNG" width="500" height="350"/>
 
 ## Privilege escalation
+Let's see which commands our user lin is allowed to run on the machine using ```sudo -l```
 
 <img src="/images/THM/BountyHacker/sudoloutput.PNG" width="550" height="100"/>
 
+We see that we're allowed to run /bin/tar as root. This could be a way for us to escalate privileges and pop that root shell. One great resource for privesc is [GTFOBins](https://gtfobins.github.io/). Looking at the page dedicated to **tar**: 
+
+<img src="/images/THM/BountyHacker/tar.PNG" width="550" height="90"/>
+
+Great ! So we can run that command **sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh** and get a root shell :
+
 <img src="/images/THM/BountyHacker/root.PNG" width="550" height="90"/>
 
-<img src="/images/THM/BountyHacker/rootflag.PNG" width="150" height="140"/>
+And we got our root.txt :
+
+<img src="/images/THM/BountyHacker/rootflag.PNG" width="180" height="140"/>
 
