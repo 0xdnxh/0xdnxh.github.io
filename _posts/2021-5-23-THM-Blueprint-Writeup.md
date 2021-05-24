@@ -55,7 +55,7 @@ It looks like we could modify some PHP code in the **http://ipaddress/oscommerce
 
 Let's run Metasploit and use **/multi/handler** to set up a listener on port 1234, accordingly to my modified script.
 
-<img src="/images/THM/Blueprint/multihandler.PNG" width="600" height="200"/>
+<img src="/images/THM/Blueprint/multihandler.PNG" width="600" height="300"/>
 
 Let's run the exploit :
 
@@ -67,7 +67,7 @@ We load **configure.php** as indicated in the output and TADAAA we receive a she
 
 A shell is good but a Meterpreter session is better as it will allow us to run tools. We use the command ```sessions -u 2``` where 2 is our session ID :
 
-<img src="/images/THM/Blueprint/upgrade.PNG" width="600" height="300"/>
+<img src="/images/THM/Blueprint/upgrade.PNG" width="650" height="350"/>
 
 ## Cracking NTLM hash
 
@@ -77,10 +77,10 @@ Great ! So now we have a Meterpreter sessions we can interact with. The question
 
 The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To decrypt it, I use Hashcat which is a password cracking tool. The command I use is ```hashcat -m 1000 myhash SecLists/Passwords/Common-Credentials/common-passwords-win.txt``` where:
 <ul>
-  <li>-m 1000 : specifies the type of hash to crack, 1000 is for NTLM. You can find the complete list for hash types [here](https://hashcat.net/wiki/doku.php?id=example_hashes)</li>
+  <li>-m 1000 : specifies the type of hash to crack, 1000 is for NTLM. You can find the complete list for hash types at https://hashcat.net/wiki/doku.php?id=example_hashes </li>
   <li>myhash : the file where I stored the necessary part of the NTLM hash for user Lab, which is the last part.
   </li>
-  <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt) </li>
+  <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found at https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt </li>
 </ul>
 
 Unfortunately, this doesn't work. I decide instead to go for something easier : [CrackStation](https://crackstation.net/), where you will just provide the hash and the website cracks it for you. Convenient, no ? It uses a dictionary that can be found [here](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm).
