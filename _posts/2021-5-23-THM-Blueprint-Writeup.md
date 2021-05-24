@@ -9,7 +9,7 @@ categories: THM
 In this blog post you will find a writeup for the [Blueprint](https://tryhackme.com/room/blueprint) room on TryHackMe. It's a Windows machine running a vulnerable version of osCommerce, an online store solution. Since this room isn't guided like the other ones, you will find my own steps and explanations.
 
 ## Enumeration
-**IP** : 10.10.53.170
+**IP** : 10.10.53.170  
 First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn 10.10.53.170``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. The command outputs the following:
 
 <img src="/images/THM/Blueprint/nmap_output.PNG" width="800" height="800"/>
