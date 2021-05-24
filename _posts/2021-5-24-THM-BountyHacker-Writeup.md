@@ -12,7 +12,7 @@ In this blog post you will find a writeup for the [Bounty Hacker](https://tryhac
 **IP**: 10.10.37.218  
 First of all, let's run nmap to get more information about the machine and discover open ports. The command that I used is ```nmap -sC -sV 10.10.37.218``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. The command outputs the following: 
 
-<img src="/images/THM/BountyHacker/nmap_output.PNG" width="600" height="600"/>
+<img src="/images/THM/BountyHacker/nmap_output.PNG" width="600" height="550"/>
 
 From this output we understand that the following ports are open:
 <ul>
