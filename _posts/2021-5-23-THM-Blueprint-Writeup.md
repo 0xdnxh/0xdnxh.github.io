@@ -9,6 +9,7 @@ categories: THM
 In this blog post you will find a writeup for the [Blueprint](https://tryhackme.com/room/blueprint) room on TryHackMe. It's a Windows machine running a vulnerable version of osCommerce, an online store solution. Since this room isn't guided like the other ones, you will find my own steps and explanations.
 
 ## Enumeration
+**IP** : 10.10.53.170
 First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn 10.10.53.170``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. The command outputs the following:
 
 <img src="/images/THM/Blueprint/nmap_output.PNG" width="800" height="800"/>
@@ -79,7 +80,7 @@ The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To 
   <li>-m 1000 : specifies the type of hash to crack, 1000 is for NTLM. You can find the complete list for hash types [here](https://hashcat.net/wiki/doku.php?id=example_hashes)</li>
   <li>myhash : the file where I stored the necessary part of the NTLM hash for user Lab, which is the last part.
   </li>
-  <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt)</li>
+  <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt) </li>
 </ul>
 
 Unfortunately, this doesn't work. I decide instead to go for something easier : [CrackStation](https://crackstation.net/), where you will just provide the hash and the website cracks it for you. Convenient, no ? It uses a dictionary that can be found [here](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm).
