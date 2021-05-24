@@ -72,7 +72,7 @@ Let's see which commands our user lin is allowed to run on the machine using ```
 
 We see that we're allowed to run /bin/tar as root. This could be a way for us to escalate privileges and pop that root shell. One great resource for privesc is [GTFOBins](https://gtfobins.github.io/). Looking at the page dedicated to **tar**: 
 
-<img src="/images/THM/BountyHacker/tar.PNG" width="550" height="90"/>
+<img src="/images/THM/BountyHacker/tar.PNG" width="550" height="100"/>
 
 Great ! So we can run that command **sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh** and get a root shell :
 
