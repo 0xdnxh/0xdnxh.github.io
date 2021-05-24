@@ -6,10 +6,10 @@ categories: THM
 ## Introduction
 <img src="/images/THM/Blueprint/banner.PNG" width="800" height="150"/>
 
-In this blog post you will find a writeup for the [Blueprint](https://tryhackme.com/room/blueprint) room on TryHackMe. It's a Windows machine running a vulnerable version of osCommerce, an online store solution. Since this room isn't guided like the other ones, you will find my own steps.
+In this blog post you will find a writeup for the [Blueprint](https://tryhackme.com/room/blueprint) room on TryHackMe. It's a Windows machine running a vulnerable version of osCommerce, an online store solution. Since this room isn't guided like the other ones, you will find my own steps and explanations.
 
 ## Enumeration
-First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn 10.10.7.76``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. The command outputs the following:
+First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn 10.10.53.170``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. The command outputs the following:
 
 <img src="/images/THM/Blueprint/nmap_output.PNG" width="800" height="800"/>
 
@@ -20,11 +20,11 @@ From this output we understand that the following interesting ports are open:
   <li>443</li>
 </ul>
 
-Navigating to http://10.10.7.76 , we get a Server error:
+Navigating to http://10.10.53.170 , we get a Server error:
 
 <img src="/images/THM/Blueprint/server_error.PNG" width="600" height="100"/>
 
-However, navigating to https://10.10.7.76 or 10.10.7.76:8080 we get the following page:
+However, navigating to https://10.10.53.170 or 10.10.53.170:8080 we get the following page:
 
 <img src="/images/THM/Blueprint/oscommerce_page.PNG" width="500" height="150"/>
 
@@ -52,7 +52,7 @@ It looks like we could modify some PHP code in the **http://ipaddress/oscommerce
 
 <img src="/images/THM/Blueprint/exploit_modified.PNG" width="700" height="500"/>
 
-Let's fire up Metasploit and use **/multi/handler** to set up a listener on port 1234, accordingly to my modified script.
+Let's run Metasploit and use **/multi/handler** to set up a listener on port 1234, accordingly to my modified script.
 
 <img src="/images/THM/Blueprint/multihandler.PNG" width="600" height="200"/>
 
@@ -64,7 +64,7 @@ We load **configure.php** as indicated in the output and TADAAA we receive a she
 
 <img src="/images/THM/Blueprint/metasploit_shell.PNG" width="600" height="90"/>
 
-A shell is good but a Meterpreter session is better as it will allow us to run tools. We use the command ```sessions -u 7``` where 7 is our session ID :
+A shell is good but a Meterpreter session is better as it will allow us to run tools. We use the command ```sessions -u 2``` where 2 is our session ID :
 
 <img src="/images/THM/Blueprint/upgrade.PNG" width="600" height="300"/>
 
