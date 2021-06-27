@@ -85,7 +85,7 @@ Using hashdump we are able to retrieve hashes on the system :
 
 <img src="/images/THM/Blue/hashdump.PNG" width="600" height="100"/>
 
-As we can see, the NTLM hash corresponding to our user Jon is there. The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To decrypt it, I ran Hashcat which is a password cracking tool using the command ```hashcat -m 1000 jonhash SecLists/Passwords/Common-Credentials/common-passwords-win.txt``` You can find the details of the options in my [Blueprint writeup](https://0xdnxh.github.io/THM-Blueprint-Writeup/) in the "Cracking NTLM hash" section.
+As we can see, the NTLM hash corresponding to our user Jon is there. The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To decrypt it, I ran Hashcat which is a password cracking tool using the command ```hashcat -m 1000 jonhash /usr/share/wordlists/rockyou.txt``` You can find the details of the options I used in my [Blueprint writeup](https://0xdnxh.github.io/THM-Blueprint-Writeup/) in the "Cracking NTLM hash" section.
 After a few seconds, Hashcat retrives the password in cleartext:
 
 <img src="/images/THM/Blue/hashcat.PNG" width="550" height="450"/>
