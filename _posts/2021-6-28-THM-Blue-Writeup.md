@@ -1,7 +1,7 @@
 ---
 layout: post
 title: THM Blue writeup
-categories: THM
+categories: [THM, Windows]
 ---
 ## Introduction
 <img src="/images/THM/Blue/banner.PNG" width="800" height="150"/> 
