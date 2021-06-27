@@ -4,7 +4,7 @@ title: THM Blue writeup
 categories: [THM, Windows]
 ---
 ## Introduction
-<img src="/images/THM/Blue/banner.PNG" width="800" height="150"/> 
+<img src="/images/THM/Blue/banner.PNG" width="800" height="120"/> 
 
 In this blog post you will find a writeup for the [Blue](https://tryhackme.com/room/blue) room on TryHackMe. This is a Windows machine running a vulnerable version of SMB, a network file sharing protocol. 
 
@@ -12,7 +12,7 @@ In this blog post you will find a writeup for the [Blue](https://tryhackme.com/r
 **IP** : 10.10.53.170  
 First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn -p- 10.10.53.170``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. I also included ```-p-``` to make sure to scan all the ports. The command outputs the following:
 
-<img src="/images/THM/Blue/nmap_output.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/nmap_output.PNG" width="800" height="700"/>
 
 From this output we understand that the following interesting ports are open:
 <ul>
@@ -22,13 +22,13 @@ From this output we understand that the following interesting ports are open:
 </ul>
 
 This indicates that the machine is exposing its SMB service which is known for having multiple vulnerabilities in the past. We can already see that the Hostname is **JON-PC** but let's use the nmap script **smb-os-discovery** to get more information about the OS and the SMB service:
-<img src="/images/THM/Blue/smbosdiscovery.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/smbosdiscovery.PNG" width="800" height="300"/>
 
 Nice, we got more information about the OS version and we confirmed the computer and workgroup names. Now let's use **smb-protocols** to get more information about the version:
-<img src="/images/THM/Blue/smbprotocols.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/smbprotocols.PNG" width="800" height="500"/>
 
 Let's also use the **smb-enum-shares** nmap script to list the shares and see if we can have anonymous access. Unfortunately w can't, so it's obvious that if we want to connect to any of the present shares we're going to need valid credentials.
-<img src="/images/THM/Blue/smbenumshares.PNG" width="800" height="800"/> 
+<img src="/images/THM/Blue/smbenumshares.PNG" width="800" height="600"/> 
 
 Okay so now using the information we gathered let's see if we can find a vulnerability for SMBv1 on Windows. Doing some research on internet, we find out that this SMB version is vulnerable to EternalBlue. 
 
@@ -45,7 +45,7 @@ What's more interesting is that, if one device is infected by malware via Eterna
 ### Gaining access
 Now that we gathered some information about the vulnerability, let's try to exploit it. Let's start Metasploit and search for MS17-010:
 
-<img src="/images/THM/Blue/metasploitms17010.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/metasploitms17010.PNG" width="800" height="600"/>
 
 The exploit that stands out for our Windows 7 target is the **EternalBlue SMB Remote Windows Kernel Pool Corruption**, which is used by the module **exploit/windows/smb/ms17_010_eternalblue** so let's go ahead and use that one.
 
