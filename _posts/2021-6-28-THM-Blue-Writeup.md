@@ -35,12 +35,12 @@ Okay so now using the information we gathered let's see if we can find a vulnera
 ## EternalBlue
 
 What is EternalBlue? EternalBlue is the name given both to the vulnerability and to the exploit that was developed for it. Originally, the NSA discovered the bug in the protocol and once they found it, they developed EternalBlue to exploit the vulnerability. However, in 2017, the exploit got leaked by the Shadow Brokers hacker group and was released into the wild. 
-<img src="/images/THM/Blue/EternalBlueschema.PNG" width="600" height="400"/> 
+<img src="/images/THM/Blue/EternalBlueschema.PNG" width="600" height="350"/> 
 
 
 The [vulnerability](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0144) itself allows remote attackers to execute arbitrary code on a system by sending specially crafted messages to the SMBv1 server. It was patched and listed on Microsoft’s security bulletin as [MS17-010](https://docs.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010).
 
-What's more interesting is that, if one device is infected by malware via EternalBlue, this puts other devices that are connected to the same network is at risk. This is what happened with [WannaCry](https://www.csoonline.com/article/3227906/what-is-wannacry-ransomware-how-does-it-infect-and-who-was-responsible.html), a crypto-ransomware, whicwas one of the first and most well-known malware to use this exploit to spread.
+What's more interesting is that, if one device is infected by malware via EternalBlue, this puts other devices that are connected to the same network is at risk. This is what happened with [WannaCry](https://www.csoonline.com/article/3227906/what-is-wannacry-ransomware-how-does-it-infect-and-who-was-responsible.html), a crypto-ransomware, which was one of the first and most well-known malware to use this exploit to spread.
 
 ### Gaining access
 Now that we gathered some information about the vulnerability, let's try to exploit it. Let's start Metasploit and search for MS17-010:
@@ -58,7 +58,7 @@ Okay so let's follow the steps in the room for the sake of answering the questio
 
 Now we're gonna try to a Meterpreter shell from our regular one. To do so, we use the command ```sessions -u 2``` where 2 is our session ID. This automatically uses the module **post/multi/manage/shell_to_meterpreter**:
 
-<img src="/images/THM/Blue/upgrade.PNG" width="800" height="600"/>
+<img src="/images/THM/Blue/upgrade.PNG" width="800" height="500"/>
 
 So now we have a Meterpreter sessions we can interact with. We can use **ps** to list all the processes:
 
@@ -66,7 +66,7 @@ So now we have a Meterpreter sessions we can interact with. We can use **ps** to
 
 We locate a process that's running as NT AUTHRITY\SYSTEM : **lsass.exe** and we migrate to it using its PID:
 
-<img src="/images/THM/Blue/migrate.PNG" width="400" height="300"/>
+<img src="/images/THM/Blue/migrate.PNG" width="400" height="200"/>
 
 ### Version 2 : Meterpreter session
 Disclaimer: In this part instead of following the room questions to get access via shell, I'm directly trying to get a Meterpreter session.
@@ -75,16 +75,16 @@ We use the payload **windows/x64/meterpreter/reverse_tcp** and after setting the
 <img src="/images/THM/Blue/runexploit.PNG" width="800" height="800"/>
 
 We can verify that we are on the machine using **sysinfo** and that our UID is **NT AUTHORITY\SYSTEM**
-<img src="/images/THM/Blue/sysinfogetuid.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/sysinfogetuid.PNG" width="600" height="300"/>
 
 ## Cracking NTLM hash
 
 using hashdump we are able to retrieve hashes on the system :
-<img src="/images/THM/Blue/hashdump.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/hashdump.PNG" width="600" height="150"/>
 
 As we can see, the NTLM hash corresponding to our user Jon is there. The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To decrypt it, I ran Hashcat which is a password cracking tool using the command ```hashcat -m 1000 jonhash SecLists/Passwords/Common-Credentials/common-passwords-win.txt``` You can find the details of the options in my [Blueprint writeup](https://0xdnxh.github.io/THM-Blueprint-Writeup/) in the "Cracking NTLM hash" section.
 After a few seconds, Hashcat retrives the password in cleartext:
-<img src="/images/THM/Blue/hashcat.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/hashcat.PNG" width="500" height="500"/>
 
 ### Finding flags
 
@@ -95,7 +95,7 @@ The last part of this room invites us to find 3 flags planted on the machine usi
 *Hint : This flag can be found at the system root.*
 System root ? Maybe C:/ ?
 
-<img src="/images/THM/Blue/flag1.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/flag1.PNG" width="800" height="500"/>
 
 ## Second flag
 
@@ -104,7 +104,7 @@ System root ? Maybe C:/ ?
 On Windows, the passwords' hashes are stored in **C:\WINDOWS\system32\config\SAM**. This file is encrypted using **C:\WINDOWS\system32\config\system** and and it's is a registry hive which is mounted to HKLM\SAM when windows is running.
 Anyway, let's cd into C:\WINDOWS\system32\config and see what we find:
 
-<img src="/images/THM/Blue/flag2.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/flag2.PNG" width="800" height="400"/>
 
 ## Third flag
 
@@ -112,7 +112,7 @@ Anyway, let's cd into C:\WINDOWS\system32\config and see what we find:
 
 Let's check out the Documents folder of our user Jon :)
 
-<img src="/images/THM/Blue/flag3.PNG" width="800" height="800"/>
+<img src="/images/THM/Blue/flag3.PNG" width="800" height="400"/>
 
 
 
