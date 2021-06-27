@@ -15,8 +15,8 @@ I added this section to give a general outline of the thought process I followed
 Host discovery + Services enumeration => Find known vulnerable service => Find exploit => Understand exploit working mechanism + run it => Elevate privileges  
 
 ## Enumeration
-**IP** : 10.10.53.170  
-First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn -p- 10.10.53.170``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. I also included ```-p-``` to make sure to scan all the ports. The command outputs the following:
+**IP** : 10.10.16.43  
+First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn -p- 10.10.16.43``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. I also included ```-p-``` to make sure to scan all the ports. The command outputs the following:
 
 <img src="/images/THM/Blue/nmap_output.PNG" width="800" height="650"/>
 
