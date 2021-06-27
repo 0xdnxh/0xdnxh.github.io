@@ -1,7 +1,7 @@
 ---
 layout: post
 title: THM Blueprint writeup
-categories: THM
+categories: [THM, Windows]
 ---
 ## Introduction
 <img src="/images/THM/Blueprint/banner.PNG" width="800" height="150"/>

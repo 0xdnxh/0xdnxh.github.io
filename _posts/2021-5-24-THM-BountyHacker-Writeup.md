@@ -1,7 +1,7 @@
 ---
 layout: post
 title: THM Bounty Hacker writeup
-categories: THM
+categories: [THM, Linux]
 ---
 ## Introduction
 <img src="/images/THM/BountyHacker/banner.PNG" width="800" height="90"/>
