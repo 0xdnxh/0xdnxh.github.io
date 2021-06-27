@@ -10,7 +10,7 @@ In this blog post you will find a writeup for the [Blue](https://tryhackme.com/r
 
 ## Thought process 
 
-I added this section to give a general outline about the thought process I followed when solving this challenge: 
+I added this section to give a general outline of the thought process I followed when solving this challenge :)
 
 Host discovery + Services enumeration => Find known vulnerable service => Find exploit => Understand exploit working mechanism + run it => Elevate privileges  
 
@@ -42,7 +42,7 @@ Okay so now using the information we gathered let's see if we can find a vulnera
 
 What is EternalBlue? EternalBlue is the name given both to the vulnerability and to the exploit that was developed for it. Originally, the NSA discovered the bug in the protocol and once they found it, they developed EternalBlue to exploit the vulnerability. However, in 2017, the exploit got leaked by the Shadow Brokers hacker group and was released into the wild. 
 <img src="/images/THM/Blue/EternalBlueschema.PNG" width="600" height="350"/> 
-
+[Photo credits](https://www.avast.com/c-eternalblue)
 
 The [vulnerability](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0144) itself allows remote attackers to execute arbitrary code on a system by sending specially crafted messages to the SMBv1 server. It was patched and listed on Microsoft’s security bulletin as [MS17-010](https://docs.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010).
 
