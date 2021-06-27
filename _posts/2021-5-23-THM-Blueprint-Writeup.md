@@ -83,7 +83,8 @@ The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To 
   <li>SecLists/Passwords/Common-Credentials/common-passwords-win.txt : the wordlist containing commong Windows passwords to compare to. It can be found at https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/common-passwords-win.txt </li>
 </ul>
 
-Unfortunately, this doesn't work. I decide instead to go for something easier : [CrackStation](https://crackstation.net/), where you will just provide the hash and the website cracks it for you. Convenient, no ? It uses a dictionary that can be found [here](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm).
+Unfortunately, this doesn't work. I decide instead to go for something easier : [CrackStation](https://crackstation.net/), where you will just provide the hash and the website cracks it for you. Convenient, no ? It uses a dictionary that can be found [here](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm). 
+**Disclaimer:** In world in client engagements, we don't want to upload out passwords on Crackstation for confidentiality reasons. In that case, we'd want to use offline cracking tools on our machines. 
 Okay, so we got the cracked password that I will not be sharing here for obvious reasons. That will be the answer to the question in the THM room. 
 
 ## Finding the root flag

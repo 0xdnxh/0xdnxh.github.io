@@ -8,6 +8,12 @@ categories: [THM, Windows]
 
 In this blog post you will find a writeup for the [Blue](https://tryhackme.com/room/blue) room on TryHackMe. This is a Windows machine running a vulnerable version of SMB, a network file sharing protocol. 
 
+## Thought process 
+
+I added this section to give a general outline about the thought process I followed when solving this challenge: 
+
+Host discovery + Services enumeration => Find known vulnerable service => Find exploit => Understand exploit working mechanism + run it => Elevate privileges  
+
 ## Enumeration
 **IP** : 10.10.53.170  
 First we fire up nmap to get more info on the machine and find out open ports. The command that I used is ```nmap -sV -sC -Pn -p- 10.10.53.170``` , the option -sV is used to determine service/version info, -sC to use the default script of nmap and -Pn to disable host discovery. I also included ```-p-``` to make sure to scan all the ports. The command outputs the following:
