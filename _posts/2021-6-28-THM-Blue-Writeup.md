@@ -45,7 +45,7 @@ What's more interesting is that, if one device is infected by malware via Eterna
 ### Gaining access
 Now that we gathered some information about the vulnerability, let's try to exploit it. Let's start Metasploit and search for MS17-010:
 
-<img src="/images/THM/Blue/metasploitms17010.PNG" width="800" height="500"/>
+<img src="/images/THM/Blue/metasploitms17010.PNG" width="800" height="400"/>
 
 The exploit that stands out for our Windows 7 target is the **EternalBlue SMB Remote Windows Kernel Pool Corruption**, which is used by the module **exploit/windows/smb/ms17_010_eternalblue** so let's go ahead and use that one.
 
@@ -66,7 +66,7 @@ So now we have a Meterpreter sessions we can interact with. We can use **ps** to
 
 We locate a process that's running as NT AUTHRITY\SYSTEM : **lsass.exe** and we migrate to it using its PID:
 
-<img src="/images/THM/Blue/migrate.PNG" width="400" height="200"/>
+<img src="/images/THM/Blue/migrate.PNG" width="300" height="150"/>
 
 ### Version 2 : Meterpreter session
 Disclaimer: In this part instead of following the room questions to get access via shell, I'm directly trying to get a Meterpreter session.
@@ -80,11 +80,11 @@ We can verify that we are on the machine using **sysinfo** and that our UID is *
 ## Cracking NTLM hash
 
 using hashdump we are able to retrieve hashes on the system :
-<img src="/images/THM/Blue/hashdump.PNG" width="600" height="150"/>
+<img src="/images/THM/Blue/hashdump.PNG" width="600" height="130"/>
 
 As we can see, the NTLM hash corresponding to our user Jon is there. The NTLM hash is in the following format : ```Username:SID:LMhash:NThash```. To decrypt it, I ran Hashcat which is a password cracking tool using the command ```hashcat -m 1000 jonhash SecLists/Passwords/Common-Credentials/common-passwords-win.txt``` You can find the details of the options in my [Blueprint writeup](https://0xdnxh.github.io/THM-Blueprint-Writeup/) in the "Cracking NTLM hash" section.
 After a few seconds, Hashcat retrives the password in cleartext:
-<img src="/images/THM/Blue/hashcat.PNG" width="500" height="500"/>
+<img src="/images/THM/Blue/hashcat.PNG" width="550" height="450"/>
 
 ### Finding flags
 
