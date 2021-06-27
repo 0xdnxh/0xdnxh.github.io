@@ -96,7 +96,8 @@ The last part of this room invites us to find 3 flags planted on the machine usi
 
 ### First flag
 
-*Hint : This flag can be found at the system root.*
+*Hint : This flag can be found at the system root.* 
+
 System root ? Maybe C:/ ?
 
 <img src="/images/THM/Blue/flag1.PNG" width="800" height="500"/>
