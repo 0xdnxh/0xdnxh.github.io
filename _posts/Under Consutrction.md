@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 404
-categories:
+categories: [404]
 ---
 
 ## Thought process 
@@ -14,5 +14,5 @@ Host discovery + Services enumeration => Find known vulnerable service => Find e
 ## Under construction
 **This blog is currently undergoing instructions, more to come soon**
 
-<img src="/images/duckknifeTHM/Ice/syn_scan.PNG" width="600" height="350"/>
+<img src="/images/duckknife.PNG" width="600" height="350"/>
 
