@@ -1,0 +1,18 @@
+---
+layout: post
+title: 404
+categories:
+---
+
+## Thought process 
+
+I added this section to give a general outline of the thought process I followed when solving this challenge :)
+
+Host discovery + Services enumeration => Find known vulnerable service => Find exploit => Understand exploit working mechanism + run it => Elevate privileges  
+-->
+
+## Under construction
+**This blog is currently undergoing instructions, more to come soon**
+
+<img src="/images/duckknifeTHM/Ice/syn_scan.PNG" width="600" height="350"/>
+
